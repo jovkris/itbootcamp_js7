@@ -1,0 +1,22 @@
+h3 {
+    color: green;
+    text-decoration: line-through;
+}
+p {
+    color: yellowgreen;
+}
+#prvi {
+    text-align: right;
+    color: violet;
+}
+.zuta_pozadina {
+    background-color: yellow;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    /* margin: 50px; */
+}
+/* * {
+    margin: 50px;
+} */

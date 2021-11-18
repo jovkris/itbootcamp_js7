@@ -1,0 +1,73 @@
+/* 
+fonts used: 
+1. Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+2. 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+*/
+
+
+body {
+    background-color: rgb(173, 156, 131);
+}
+
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 150px;
+    border-style: dashed;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+#intro {
+    color: darkslategray;
+    font-size: 22px;
+}
+
+p {
+    color: darkslategray;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+}
+
+.social {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+    border-style: double;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    color: purple;
+    background-color: darkslategrey;
+}
+
+ul{
+    padding-left: 11%;
+}
+
+li {
+    color: darkred;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.instagram {
+    color: darkslateblue;
+}
+.instagram:hover {
+    color: deeppink;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    
+}
+
+.bye {
+    text-align: center;
+}

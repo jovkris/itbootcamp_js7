@@ -1,0 +1,36 @@
+h2 {
+    color: green;
+    text-align: center;
+}
+
+body {
+    background-color: black;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: double;
+    border-color: red;
+    height: 500px;
+}
+
+.isti {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+#fright {
+    color: white;
+}
+
+#hamster {
+    color: red;
+    
+}
+
+#hamster:hover {
+    color: green;
+}
