@@ -1,0 +1,18 @@
+.zuti {
+    background-color: yellow;
+}
+
+#tabela_1 tr:nth-child(odd) {
+    font-style: italic;
+}
+
+/* ako ide razmak pa :hover onda targetira celiju ne ceo red
+ako :hover ide pre tr:nth-child() a uz inicijalni target, onda se pale oba reda istovremeno na hover */
+#tabela_2 tr:nth-child(even):hover {
+    background-color: yellow;
+}
+
+#tabela_2 tr:nth-child(3) {
+    color: blue;
+}
+

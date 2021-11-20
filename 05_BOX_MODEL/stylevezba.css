@@ -1,0 +1,19 @@
+span {
+    display: inline-block;
+    border: 10px solid black;
+    padding: 20px;
+    margin: 30px;
+    width: 100px;
+    height: 30px;
+}
+
+#prvi {
+    background-color: blue;
+    padding-bottom: 5px;
+}
+
+#drugi {
+    background-color: brown;
+    padding-left: 30px;
+    margin-left: 50px;
+}
