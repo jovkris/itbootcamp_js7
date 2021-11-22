@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+header {
+    background-image: url(https://lh3.googleusercontent.com/proxy/4_h5NEM1gNYv9Q4X7hLIr834FWmfFyHEKp0XxyYALt1YhVfjIG8o22Vu0ZjcMSkhj1C6fYir9RQZlziLLx_4VRe9Gw7GVOLV_5xgM_eL17M1ExY2lu0dAXNg_-NhaAVDF29eu0u1pZ6pS4o) ;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 250px;
+
+
+}
+
+/* div {
+    background-color: chocolate;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+/* div {
+    background-color: chocolate;
+    position: absolute;
+    top: 0;
+    right: 0;
+} */
+
+/* div {
+    background-color: chocolate;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+} */
+
+/* div {
+    background-color: chocolate;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} */
+
+div {
+    background-color: chocolate;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+    

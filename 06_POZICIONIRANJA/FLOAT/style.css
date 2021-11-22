@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#parent {
+    background-color: brown;
+    overflow: hidden;
+}
+
+#parent p {
+    background-color: burlywood;
+    float: right;
+    width: 25%;
+}
+
+#parent p:first-child {
+    float: left;
+}
