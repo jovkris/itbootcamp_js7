@@ -66,3 +66,18 @@ let usd = din / dolarDinar;
 
 console.log("Ja imam: " + usd + " dolara");
 
+// Trenutno vreme i datum
+
+let datum = new Date(); // datum - objekat koji sadrzi trenutni info o trenutnom datumu i vremenu
+
+let mesec = datum.getMonth() + 1;
+
+let godina = datum.getFullYear();
+
+let datumUMesecu = datum.getDate(); // datum u mesecu
+
+let danUNedelji = datum.getDay(); // dan u nedelji
+console.log("Danas je "+ datumUMesecu + "." + mesec + "." +godina);
+
+console.log(danUNedelji);
+
