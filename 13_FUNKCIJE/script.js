@@ -315,5 +315,17 @@ console.log(pare);
 
 
 
+// 16.
 
 
+
+function vreme(t, p, n) {
+    let čekaj = n + p - t;
+    if (p > t || t >= p + n) {
+        console.log(`Burke samo piči`);
+    }
+    else {
+        console.log(`Burke treba da krene kroz ${čekaj} sec da ne bi čekao most`);
+    }
+}
+vreme(11, 10, 160);
