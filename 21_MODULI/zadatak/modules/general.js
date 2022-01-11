@@ -4,4 +4,4 @@ function generate_image(src) {
     return img;
 }
 
-export {generate_image};
+export default generate_image;

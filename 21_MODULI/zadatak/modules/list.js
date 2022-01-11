@@ -1,4 +1,4 @@
-import {generate_image} from "./general.js";
+import generate_image from "./general.js";
 
 function generate_list(parent) {
     let ul = document.createElement(`ul`);
@@ -8,7 +8,7 @@ function generate_list(parent) {
     return ul;
 }
 
-function generate_list_item(parent, src) {
+function generate_item(parent, src) {
     let li = document.createElement(`li`);
     li.style.float = `left`;
     let img = generate_image(src);
@@ -17,4 +17,4 @@ function generate_list_item(parent, src) {
     return li;
 }
 
-export {generate_list, generate_list_item};
+export {generate_list, generate_item};
