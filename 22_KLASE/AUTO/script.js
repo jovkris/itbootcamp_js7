@@ -46,3 +46,4 @@ let a5 = new Auto(`    Audi A4`, `plava`, false, 3);
 console.log(a5);
 
 a3.stampaj();
+
