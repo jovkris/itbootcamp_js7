@@ -64,6 +64,15 @@ class Film {
     stampaj() {
         console.log(this);
     }
+
+    prosek() {
+        let suma_ocena = 0;
+        this.ocene.forEach(ocena => {
+            suma_ocena += ocena;
+        });
+        let prosecna_ocena = suma_ocena / this.ocene.length;
+        return prosecna_ocena;
+    }
 }
 
 export default Film;
