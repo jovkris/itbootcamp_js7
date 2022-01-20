@@ -1,0 +1,22 @@
+[
+    {
+        "ime": "Stephen",
+        "prezime": "Curry",
+        "visina": 1.88,
+        "timovi": ["Golden State Warriors"]
+    },
+    
+    {
+        "ime": "Michael",
+        "prezime": "Jordan",
+        "visina": 1.98,
+        "timovi": ["Chicago Bulls", "Washington Wizards"]
+    },
+
+    {
+        "ime": "Kobe",
+        "prezime": "Bryant",
+        "visina": 1.98,
+        "timovi": ["Los Angeles Lakers"]
+    }
+]

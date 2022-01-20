@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+li {
+    list-style: none;
+    width: 150px;
+    background-color: burlywood;
+    border: 1px solid black;
+}
+ul {
+    width: fit-content;
+}
+
+.line {
+    text-decoration: line-through;
+}
+
+form{
+    width: 150px;
+}
+#dugme{
+    display: block;
+    width: 150px;
+}
