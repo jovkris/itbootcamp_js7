@@ -13,7 +13,8 @@ h3{
 span {
     display: inline-block;
     width: 25%;
-    background-color: blue;
+    background-color: burlywood;
+    text-align: center;
 }
 #inputs {
     text-align: center;
