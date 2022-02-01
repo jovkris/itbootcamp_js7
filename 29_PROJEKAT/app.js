@@ -9,13 +9,13 @@ let proba3 = new Chatroom(`general`, `teksto probe`);
 proba.username = `hm ne znam`;
 console.log(proba);
 
-proba.addChat(`blip blap blup`) // then i catch cemo tek ovde pisati...
-.then(() =>{
-    console.log(`uspesno dodat chat`);
-})
-.catch(err =>{
-    console.log(`neuspesno: ${err}`);
-})
+// proba.addChat(`blip blap blup`) // then i catch cemo tek ovde pisati...
+// .then(() =>{
+//     console.log(`uspesno dodat chat`);
+// })
+// .catch(err =>{
+//     console.log(`neuspesno: ${err}`);
+// })
 
 // proba.getChats((par)=>{ // ocekivanje parametra jer callback
 //     console.log(par); // realizacija callback-a
