@@ -17,9 +17,9 @@ proba.addChat(`blip blap blup`) // then i catch cemo tek ovde pisati...
     console.log(`neuspesno: ${err}`);
 })
 
-proba.getChats((par)=>{ // ocekivanje parametra jer callback
-    console.log(par); // realizacija callback-a
-});
+// proba.getChats((par)=>{ // ocekivanje parametra jer callback
+//     console.log(par); // realizacija callback-a
+// });
 
 console.log(proba1.room);
 
@@ -28,4 +28,11 @@ console.log(proba1.room);
 let message_container = document.querySelector(`ul`);
 
 let c = new ChatUI(message_container);
-console.log(c.creator);
+console.log(c.container);
+
+
+///////////////////////////////////////////
+
+proba.getChats((par)=>{ // ocekivanje parametra jer callback
+    c.templateLi(par); // realizacija callback-a
+});
