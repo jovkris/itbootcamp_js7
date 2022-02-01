@@ -61,23 +61,5 @@ class Chatroom{
     }
 }
 
-// SVE RADI KAKO TREBA
 
-let proba = new Chatroom(`js`, `proba_username`);
-let proba1 = new Chatroom(`tests`, `jos jedna proba`);
-let proba3 = new Chatroom(`general`, `teksto probe`);
-
-proba.username = `hm ne znam`;
-console.log(proba);
-
-proba.addChat(`blip blap blup`) // then i catch cemo tek ovde pisati...
-.then(() =>{
-    console.log(`uspesno dodat chat`);
-})
-.catch(err =>{
-    console.log(`neuspesno: ${err}`);
-})
-
-proba3.getChats((par)=>{ // ocekivanje parametra jer callback
-    console.log(par); // realizacija callback-a
-});
+export {Chatroom};
