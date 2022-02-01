@@ -36,3 +36,15 @@ console.log(c.container);
 proba.getChats((par)=>{ // ocekivanje parametra jer callback
     c.templateLi(par); // realizacija callback-a
 });
+
+let send = document.querySelector(`#form_send`);
+
+send.addEventListener(`click`, e => {
+    e.preventDefault();
+    let msg = document.querySelector(`#message`).value;
+    proba.addChat(msg)
+    .then(send.reset())
+    .catch(err =>{
+        console.log(`desio se error: ${err}`);
+    })
+});
