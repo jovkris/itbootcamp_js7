@@ -46,7 +46,10 @@ class Chatroom{
 
     // callback metod get chats prati promene i vraca poruke
     getChats(callback){
-        this.chats.onSnapshot(snapshot =>{
+        this.chats
+        .where(`room`, `==`, this.room)
+        .orderBy(`created_at`, `asc`)
+        .onSnapshot(snapshot =>{
             snapshot.docChanges().forEach(change => {
 
                 // Ispisati dokumente koji su dodati u nasu bazu
