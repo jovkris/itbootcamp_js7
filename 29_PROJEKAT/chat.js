@@ -10,13 +10,13 @@ class Chatroom{
     }
 
     set username(u){
-        // za domaci PROVERA KORISNICKOG IMENA
-        /*
-        Dužina korisničkog imena je između 2 i 10 karaktera
-        Korisničko ime ne sme biti sastavljeno samo od praznina ili tabova
-        Ukoliko je korisničko ime nevalidno, prikazati alert sa odgovarajućom porukom
-        */
-        this._username = u;
+        let u1 = u.trim();
+        if (u1.length > 1 && u1.length < 11) {
+            this._username = u1;
+        }
+        else{
+            window.alert("Invalid username! Try again")
+        }
     }
 
     get room(){

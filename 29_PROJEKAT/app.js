@@ -2,11 +2,12 @@ import { Chatroom } from "./chat.js";
 import { ChatUI } from "./ui.js";
 // SVE RADI KAKO TREBA
 
-let proba = new Chatroom(`js`, `proba_username`);
-let proba1 = new Chatroom(`tests`, `jos jedna proba`);
-let proba3 = new Chatroom(`general`, `teksto probe`);
+let proba = new Chatroom(`js`, `Kristina`);
+let proba1 = new Chatroom(`tests`, `Nemanja`);
+let proba3 = new Chatroom(`general`, `Vlajko`);
 
-proba.username = `hm ne znam`;
+
+console.log(proba.username);
 console.log(proba);
 
 // proba.addChat(`blip blap blup`) // then i catch cemo tek ovde pisati...
@@ -53,3 +54,4 @@ send.addEventListener(`click`, e => {
         console.log(`desio se error: ${err}`);
     })
 });
+
