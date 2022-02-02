@@ -27,9 +27,24 @@ class Chatroom{
         return this._username;
     }
 
+    // nesto da probam
+
+    // check_msg(msg){
+    //    let msg1 = msg.trim();
+    //     let message = ``;
+    //     if (msg1.length > 0) {
+    //         message = msg;
+    //     }
+    //     return message;
+    // }
+
     // dodavanje nove poruke!!
 
     async addChat(msg){
+        let msg1 = msg.trim();
+        if (msg1.length==0) {
+            return;
+        }
         let date = new Date();
         let new_msg = {
             message: msg,
