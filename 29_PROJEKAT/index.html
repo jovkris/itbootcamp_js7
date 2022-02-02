@@ -8,28 +8,33 @@
     <title>CHAT</title>
 </head>
 <body>
-    <header>
+    <header class="row">
         <h1>ITBootcamp Chat</h1>
         <h3>Choose a chatroom</h3>
     </header>
-    <nav>
-        <span>#general</span><span>#js</span><span>#homework</span><span>#tests</span>
+    <nav class="row">
+        <div class="col-3" class="col-t-3">#general</div>
+        <div class="col-3" class="col-t-3">#js</div>
+        <div class="col-3" class="col-t-3">#homework</div>
+        <div class="col-3" class="col-t-3">#tests</div>
     </nav>
-    <div id="history">
-        <ul>
-            <!--div sa ispisom poruka-->
-        </ul>
+    <div id="container" class="row">
+        <div id="history" class="row">
+            <ul class="row">
+                <!--div sa ispisom poruka-->
+            </ul>
+        </div>
+        <div id="inputs">
+            <form action="form_message" id="form_send">
+                <input type="text" name="message" id="message" placeholder="Your message..." autocomplete="off">
+                <input type="submit" value="Send" id="send">
+            </form>
+            <form action="form_username">
+                <input type="text" name="username" id="username" placeholder="Update your username">
+                <input type="submit" value="Update">
+            </form>
+        </div>
     </div>
-    <div id="inputs">
-        <form action="form_message" id="form_send">
-            <input type="text" name="message" id="message" placeholder="Your message...">
-            <input type="submit" value="Send" id="send">
-        </form>
-    <form action="form_username">
-        <input type="text" name="username" id="username" placeholder="Update your message">
-        <input type="submit" value="Update">
-    </form>
-</div>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>

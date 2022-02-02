@@ -37,13 +37,18 @@ proba.getChats((par)=>{ // ocekivanje parametra jer callback
     c.templateLi(par); // realizacija callback-a
 });
 
-let send = document.querySelector(`#form_send`);
+let send = document.querySelector(`#send`);
+let form_send = document.querySelector(`#form_send`);
 
 send.addEventListener(`click`, e => {
     e.preventDefault();
     let msg = document.querySelector(`#message`).value;
+    let scroll_down = document.querySelector(`#history`)
     proba.addChat(msg)
-    .then(send.reset())
+    .then(function() {
+        form_send.reset();
+        scroll_down.scrollTop = scroll_down.scrollHeight;
+    })
     .catch(err =>{
         console.log(`desio se error: ${err}`);
     })
