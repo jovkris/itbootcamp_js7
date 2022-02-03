@@ -48,6 +48,10 @@ class ChatUI{
         let li = `<li>${data.username} : ${data.message} <br> ${this.formatDate(data)}</li>`;
         this.container.innerHTML += li;
     }
+
+    clear(){
+        this.container.innerHTML = ``;
+    }
 }
 
 export { ChatUI };

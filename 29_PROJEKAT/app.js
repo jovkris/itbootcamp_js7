@@ -9,7 +9,7 @@ let send = document.querySelector(`#send`);
 let form_send = document.querySelector(`#form_send`);
 let update = document.querySelector(`#update`); // update button
 let update_form = document.querySelector(`#form_username`); // forma za juzera
-
+let chatroom_nav = document.querySelector(`nav`);
 
 let username = () => {
     if (localStorage.username) {
@@ -20,8 +20,18 @@ let username = () => {
     }
 }
 
+
+let room_refresh = () =>{
+    if(localStorage.room){
+        return localStorage.room
+    }
+    else{
+        return `general`
+    }
+}
+
 // Objekti klasa/ instance klasa
-let chatroom = new Chatroom(`general`, username());
+let chatroom = new Chatroom(room_refresh(), username());
 let chatUI = new ChatUI(message_container);
 
 // DEMONSTRACIJA postavljanja vrednosti u LOCAL STORAGE 
@@ -38,9 +48,9 @@ let chatUI = new ChatUI(message_container);
 
 
 
-chatroom.getChats(d=>{
-    console.log(d);
-});
+// chatroom.getChats(d=>{
+//     console.log(d);
+// });
 
 //ispis dokumenata iz db na stranici
 
@@ -75,3 +85,12 @@ update.addEventListener(`click`, e =>{
     update_form.reset();
 });
 
+chatroom_nav.addEventListener(`click`, event =>{
+    if(event.target.tagName == `DIV`){
+        chatUI.clear();
+        chatroom.room = event.target.id;
+        chatroom.getChats(d =>{
+            chatUI.templateLi(d);
+        })
+    }
+})

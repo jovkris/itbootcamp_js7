@@ -7,6 +7,7 @@ class Chatroom{
 
     set room(r){
         this._room = r;
+        localStorage.setItem("room", r);
     }
 
     set username(u){
@@ -27,21 +28,6 @@ class Chatroom{
     get username(){
         return this._username;
     }
-
-    // nesto da probam
-
-    // check_msg(msg){
-    //    let msg1 = msg.trim();
-    //     let message = ``;
-    //     if (msg1.length > 0) {
-    //         message = msg;
-    //     }
-    //     return message;
-    // }
-
-
-
-
 
     // dodavanje nove poruke!!
 
