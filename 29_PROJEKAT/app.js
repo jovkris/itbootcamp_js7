@@ -5,14 +5,23 @@ import { ChatUI } from "./ui.js";
 // DOM
 
 let message_container = document.querySelector(`ul`);
-
-// Objekti klasa/ instance klasa
-let chatroom = new Chatroom(`tests`, `Kristina`);
-let chatUI = new ChatUI(message_container);
 let send = document.querySelector(`#send`);
 let form_send = document.querySelector(`#form_send`);
 let update = document.querySelector(`#update`); // update button
 let update_form = document.querySelector(`#form_username`); // forma za juzera
+
+// Objekti klasa/ instance klasa
+let chatroom = new Chatroom(`tests`, `Kristina`);
+let chatUI = new ChatUI(message_container);
+
+// DEMONSTRACIJA postavljanja vrednosti u LOCAL STORAGE 
+// U local storage se sve cuva kao string :D
+
+localStorage.setItem("username","Default");
+
+// UZIMANJE VREDNOSTI IZ LOCAL STORAGE-A
+let korisnik = localStorage.username;
+console.log(korisnik);
 
 chatroom.getChats(d=>{
     console.log(d);
