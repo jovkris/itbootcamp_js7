@@ -13,6 +13,7 @@ class Chatroom{
         let u1 = u.trim();
         if (u1.length > 1 && u1.length < 11) {
             this._username = u1;
+            localStorage.setItem("username", u1);
         }
         else{
             window.alert("Invalid username! Try again")

@@ -10,18 +10,33 @@ let form_send = document.querySelector(`#form_send`);
 let update = document.querySelector(`#update`); // update button
 let update_form = document.querySelector(`#form_username`); // forma za juzera
 
+
+let username = () => {
+    if (localStorage.username) {
+        return localStorage.username
+    }
+    else{
+        return `Anonymous`
+    }
+}
+
 // Objekti klasa/ instance klasa
-let chatroom = new Chatroom(`tests`, `Kristina`);
+let chatroom = new Chatroom(`general`, username());
 let chatUI = new ChatUI(message_container);
 
 // DEMONSTRACIJA postavljanja vrednosti u LOCAL STORAGE 
 // U local storage se sve cuva kao string :D
 
-localStorage.setItem("username","Default");
+// localStorage.setItem("username","Default");
 
 // UZIMANJE VREDNOSTI IZ LOCAL STORAGE-A
-let korisnik = localStorage.username;
-console.log(korisnik);
+// let korisnik = localStorage.username;
+// console.log(korisnik);
+
+/////////////////////////////////////////////////////////
+
+
+
 
 chatroom.getChats(d=>{
     console.log(d);
