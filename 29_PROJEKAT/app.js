@@ -55,3 +55,15 @@ send.addEventListener(`click`, e => {
     })
 });
 
+// update username forma OVO NE VRACA PROMIS I NEMA THEN I CATCH!!!
+
+let update = document.querySelector(`#update`); // update button
+let update_form = document.querySelector(`#form_username`); // forma za juzera
+
+update.addEventListener(`click`, e =>{
+    e.preventDefault();
+    let user = document.querySelector(`#username`).value; // value inputa za usernname
+    proba.username = user;
+    update_form.reset();
+});
+

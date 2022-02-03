@@ -38,6 +38,10 @@ class Chatroom{
     //     return message;
     // }
 
+
+
+
+
     // dodavanje nove poruke!!
 
     async addChat(msg){
