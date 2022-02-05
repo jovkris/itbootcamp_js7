@@ -45,9 +45,32 @@ class ChatUI{
 
     // metod koji sluzi kao template za poruku
     templateLi(data){
-        let li = `<li>${data.username} : ${data.message} <br> ${this.formatDate(data)}</li>`;
-        this.container.innerHTML += li;
+        let id = data.id;
+        data = data.data();
+        let li = document.createElement(`li`);
+        li.innerHTML = `<span id="usernameSPN">${data.username} :</span> <span id="msgSPN">${data.message}</span> <span id="dateSPN">${this.formatDate(data)}</span><img src="./img/trash.png">`;
+        li.setAttribute(`id`, `${id}`);
+        console.log(data.username);
+        this.container.appendChild(li);
+        if(data.username == localStorage.username){
+            li.classList.toggle(`me`);   
+        }
+        else{
+            li.classList.toggle(`them`);
+        }
+        
     }
+
+    // OCAJNI POKUSAJI
+    // templateLi(data){
+    //     // prikaz lijeva za korisnika
+    //     let li = document.createElement(`li`);
+    //     li.innerHTML = `${data.username} : ${data.message} <br> ${this.formatDate(data)}`
+    //     if(data.username == this.username){
+    //         li.classList.toggle(`me`);
+    //     }
+    //     this.container.appendChild(li);
+    // }
 
     clear(){
         this.container.innerHTML = ``;

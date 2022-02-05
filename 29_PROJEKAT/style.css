@@ -85,6 +85,7 @@ nav > div {
     flex-direction: column-reverse;
     background-color: #bfd8dc;
     border-radius: 5px;
+    /* position: relative; */
 }
 
 /* width */
@@ -117,6 +118,12 @@ input[type="submit"] {
     background-color: cornflowerblue;
     color: cornsilk;
 }
+#send {
+    height: 43px;
+}
+#update{
+    height: 22px;
+}
 form{
     overflow: hidden;
 }
@@ -126,5 +133,43 @@ form{
     outline: none;
 }
 
+.me {
+    float: right;
+    clear: both;
+    /* background-color: cadetblue; */
+    border-radius: 5px 0px 5px 5px;
+}
 
 
+img {
+    position: relative;
+    width: 15px;
+    float: right;
+}
+
+#usernameSPN {
+    font-weight: bold;
+}
+
+#dateSPN {
+    display: table;
+    font-size: small;
+    color: #bfd8dc;
+}
+.them{
+    border-radius: 0px 5px 5px 5px;
+}
+
+ul {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+li {
+    background-color: grey;
+    width: fit-content;
+    padding: 3px;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 2px;
+}

@@ -3,6 +3,7 @@ class Chatroom{
         this.room = r;
         this.username = u;
         this.chats = db.collection(`chats`);
+        this.unsub = false; // odredili smo da false bude kao signal da je stranica prvi put ucitana
     }
 
     set room(r){
@@ -29,6 +30,15 @@ class Chatroom{
         return this._username;
     }
 
+    // update room-a
+
+    updateRoom(ur) { // update room kao parametar
+        this.room = ur;
+        if(this.unsub){ // ako unsub vise nije false nego je u getChats postalo funkcija
+            this.unsub(); // unsub je sada funkcija i pozivam je sa zagradama
+        }
+    }
+
     // dodavanje nove poruke!!
 
     async addChat(msg){
@@ -52,7 +62,7 @@ class Chatroom{
 
     // callback metod get chats prati promene i vraca poruke
     getChats(callback){
-        this.chats
+        this.unsub = this.chats // sve smestamo u unsub i kasnije pozivamo kao funkciju
         .where(`room`, `==`, this.room)
         .orderBy(`created_at`, `asc`)
         .onSnapshot(snapshot =>{
@@ -60,7 +70,7 @@ class Chatroom{
 
                 // Ispisati dokumente koji su dodati u nasu bazu
                 if (change.type == `added`) {
-                    callback(change.doc.data()); // prosledjivanje dokumenta
+                    callback(change.doc); // ceo dokument mozemo da gledamo i njegov id
                 }
             });
         });
