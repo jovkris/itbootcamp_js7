@@ -50,6 +50,7 @@ class ChatUI{
         let li = document.createElement(`li`);
         li.innerHTML = `<span id="usernameSPN">${data.username} :</span> <span id="msgSPN">${data.message}</span> <span id="dateSPN">${this.formatDate(data)}</span><img src="./img/trash.png">`;
         li.setAttribute(`id`, `${id}`);
+
         console.log(data.username);
         this.container.appendChild(li);
         if(data.username == localStorage.username){

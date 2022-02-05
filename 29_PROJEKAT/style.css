@@ -76,6 +76,14 @@ nav > div {
     text-align: center;
     padding: 10px;
 }
+nav > div:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+nav > div:focus{
+    text-decoration: underline;
+}
+
 #history {
     height: 500px;
     overflow: scroll;
@@ -132,12 +140,14 @@ form{
     width: 75%;
     outline: none;
 }
-
+#message {
+    height: 43px;
+}
 .me {
     float: right;
     clear: both;
-    /* background-color: cadetblue; */
     border-radius: 5px 0px 5px 5px;
+    background-color: teal;
 }
 
 
@@ -158,6 +168,7 @@ img {
 }
 .them{
     border-radius: 0px 5px 5px 5px;
+    background-color: deeppink;
 }
 
 ul {
@@ -166,8 +177,7 @@ ul {
 }
 
 li {
-    background-color: grey;
-    width: fit-content;
+    width: 51%;
     padding: 3px;
     list-style-type: none;
     overflow: hidden;
