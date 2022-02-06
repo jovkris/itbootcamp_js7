@@ -62,17 +62,6 @@ class ChatUI{
         
     }
 
-    // OCAJNI POKUSAJI
-    // templateLi(data){
-    //     // prikaz lijeva za korisnika
-    //     let li = document.createElement(`li`);
-    //     li.innerHTML = `${data.username} : ${data.message} <br> ${this.formatDate(data)}`
-    //     if(data.username == this.username){
-    //         li.classList.toggle(`me`);
-    //     }
-    //     this.container.appendChild(li);
-    // }
-
     clear(){
         this.container.innerHTML = ``;
     }

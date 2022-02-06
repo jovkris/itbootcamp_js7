@@ -30,6 +30,20 @@ class Chatroom{
         return this._username;
     }
 
+    // delete chat
+
+    deleteChat(id){
+        this.chats
+        .doc(id)
+        .delete()
+        .then(()=>{
+            console.log(`Uspesno izbrisan chat`);
+        })
+        .catch(err =>{
+            console.log(`greska pri brisanju chat-a ${err}`);
+        })
+    }
+
     // update room-a
 
     updateRoom(ur) { // update room kao parametar
@@ -62,6 +76,17 @@ class Chatroom{
 
     // callback metod get chats prati promene i vraca poruke
     getChats(callback){
+        let possible_rooms = document.querySelectorAll(`button`);
+        possible_rooms.forEach(el =>{
+            console.log(el.id);
+            console.log(el);
+            if(el.id == this.room){
+                el.classList.toggle(`selected`);
+            }
+            else if(el.id !== this.room && el.classList.contains(`selected`)){
+                el.classList.toggle(`selected`);
+            }
+        })
         this.unsub = this.chats // sve smestamo u unsub i kasnije pozivamo kao funkciju
         .where(`room`, `==`, this.room)
         .orderBy(`created_at`, `asc`)

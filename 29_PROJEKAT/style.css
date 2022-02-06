@@ -59,29 +59,26 @@
     }
 }
 body{
-    background-color: black;
+    background-color: #0d0d0d;
 }
 header, #inputs {
     text-align: center;
 }
 header{
-    color: blanchedalmond;
+    color: #ECEAF1;
 }
-nav > div {
+nav > button {
     display: inline-block;
     height: 40px;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: cornflowerblue;
+    background-color: #566373;
     text-align: center;
     padding: 10px;
 }
-nav > div:hover{
+nav > button:hover{
     text-decoration: underline;
     cursor: pointer;
-}
-nav > div:focus{
-    text-decoration: underline;
 }
 
 #history {
@@ -91,8 +88,8 @@ nav > div:focus{
     scrollbar-width: none;
     display: flex;
     flex-direction: column-reverse;
-    background-color: #bfd8dc;
     border-radius: 5px;
+    background-color: rgb(196, 212, 242);;
     /* position: relative; */
 }
 
@@ -120,11 +117,11 @@ nav > div:focus{
 
 input[type="submit"] {
     width: 25%;
-    height: 21px;
+    height: 22px;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: cornflowerblue;
-    color: cornsilk;
+    background-color: #566373;
+    color: #ECEAF1;
 }
 #send {
     height: 43px;
@@ -147,7 +144,7 @@ form{
     float: right;
     clear: both;
     border-radius: 5px 0px 5px 5px;
-    background-color: teal;
+    background-color: #99AFF2;
 }
 
 
@@ -164,11 +161,11 @@ img {
 #dateSPN {
     display: table;
     font-size: small;
-    color: #bfd8dc;
+    color: #595858;
 }
 .them{
     border-radius: 0px 5px 5px 5px;
-    background-color: deeppink;
+    background-color: #F2F2F2;
 }
 
 ul {
@@ -182,4 +179,22 @@ li {
     list-style-type: none;
     overflow: hidden;
     margin: 2px;
+}
+
+.selected {
+    background-color: #164371;
+}
+
+#color_update{
+    /* right: 0; */
+    height: 32px;
+}
+
+#color_pick{
+    /* left: 0; */
+    width: 75%;
+}
+
+input[type*="datetime"]{
+    width: 37.50%;
 }

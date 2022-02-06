@@ -10,7 +10,12 @@ let update = document.querySelector(`#update`); // update button
 let update_form = document.querySelector(`#form_username`); // forma za juzera
 let chatroom_nav = document.querySelector(`nav`);
 let msg_textarea = document.querySelector(`#message`);
-
+let div_history = document.querySelector(`#history`);
+let form_color = document.querySelector(`#form_color`);
+let color_input = document.querySelector(`#color_pick`);
+let date_form = document.querySelector(`#form_date`)
+let date1 = document.querySelector(`#date1`);
+let date2 = document.querySelector(`#date2`);
 // pamcenje username-a i room-a
 let username = () => {
     if (localStorage.username) {
@@ -31,6 +36,16 @@ let room_refresh = () =>{
     }
 }
 
+let color_set = () => {
+    if(localStorage.color){
+        return localStorage.color
+    }
+    else{
+        return `#0D0D0D`
+    }
+};
+
+div_history.style.backgroundColor = color_set();
 // Objekti klasa/ instance klasa
 let chatroom = new Chatroom(room_refresh(), username());
 let chatUI = new ChatUI(message_container);
@@ -98,15 +113,79 @@ update.addEventListener(`click`, e =>{
     let user = document.querySelector(`#username`).value; // value inputa za usernname
     chatroom.username = user;
     update_form.reset();
+    let updated = document.createElement(`h2`);
+    div_history.appendChild(updated);
+    updated.style.color = `white`;
+    updated.style.textAlign =`center`;
+    updated.style.position = `fixed`;
+    updated.style.top = `50%`;
+    updated.style.left = `40%`;
+    updated.style.zIndex = `100`;
+    
+    updated.innerText = `Username updated to: ${user}`;
+    
+    setTimeout(function() {
+        updated.innerText = ``;
+        location.reload();
+    }, 3000);
+    
 });
 
 chatroom_nav.addEventListener(`click`, event =>{
-    if(event.target.tagName == `DIV`){
+    if(event.target.tagName == `BUTTON`){
         chatUI.clear();
         chatroom.updateRoom(event.target.id); // iz chat metoda da ne salje 1000 puta istu poruku...
         chatroom.getChats(d =>{
             chatUI.templateLi(d);
         })
     }
-})
+});
 
+message_container.addEventListener(`click`, event =>{
+    if (event.target.tagName == `IMG`) {
+        let parent = event.target.parentElement;
+        if(parent.classList.contains(`them`)){
+            parent.remove();
+        }
+        else if(confirm(`Are you sure you want to permanently delete the message?`) && parent.classList.contains(`me`)){
+            chatroom.deleteChat(event.target.parentElement.id);
+            parent.remove();
+        }
+        else{
+            console.log(`cancel was pressed`);
+        }
+        
+    }
+});
+
+
+form_color.addEventListener(`submit`, event =>{
+    event.preventDefault();
+    let color = color_input.value;
+    setTimeout(() =>{
+        div_history.style.backgroundColor = color;
+    }, 500);
+    localStorage.setItem(`color`, color);
+});
+
+
+
+// date
+
+date_form.addEventListener(`submit`, event =>{
+    event.preventDefault();
+    if(date1.value != `` && date2.value != ``){
+        let d1 = new Date(date1.value);
+        let d2 = new Date(date2.value);
+        console.log(date1.value);
+        chatUI.clear();
+        chatroom.getChats(data =>{
+            let msg_date = data.data().created_at.toDate();
+            if(msg_date >= d1 && msg_date <= d2){
+                chatUI.templateLi(data);
+            }
+        });
+        // date_form.reset();
+    }
+    
+});

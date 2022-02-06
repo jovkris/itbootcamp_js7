@@ -13,10 +13,10 @@
         <h3>Choose a chatroom</h3>
     </header>
     <nav class="row">
-        <div class="col-3" id="general" class="focus">#general</div>
-        <div class="col-3" id="js" class="focus">#js</div>
-        <div class="col-3" id="homework" class="focus">#homework</div>
-        <div class="col-3" id="tests" class="focus">#tests</div>
+        <button class="col-3" id="general" class="focus">#general</button>
+        <button class="col-3" id="js" class="focus">#js</button>
+        <button class="col-3" id="homework" class="focus">#homework</button>
+        <button class="col-3" id="tests" class="focus">#tests</button>
     </nav>
     <div id="container" class="row">
         <div id="history">
@@ -25,6 +25,15 @@
             </ul>
         </div>
         <div id="inputs">
+            <form action="form_color" id="form_color">
+                <input type="color" name="color_pick" id="color_pick" class="col-11">
+                <input type="submit" value="Update color" id="color_update">
+            </form>
+            <form action="date" id="form_date">
+                <input type="datetime-local" name="date1" id="date1" class="col-">
+                <input type="datetime-local" name="date2" id="date2" class="col-">
+                <input type="submit" value="Set dates" id="date_submit" class="col-"> 
+            </form>
             <form action="form_message" id="form_send">
                 <textarea name="message" id="message" placeholder="Your message..." autocomplete="off" class="col-11" cols="10" rows="1" style="resize: none;" spellcheck="off"></textarea>
                 <input type="submit" value="Send" id="send">
