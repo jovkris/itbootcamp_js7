@@ -183,4 +183,5 @@ date_form.addEventListener(`submit`, event =>{
             }
         });
     }
+    date_form.reset();
 });
