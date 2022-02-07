@@ -43,7 +43,7 @@ class ChatUI{
         return date_and_time; 
     }
 
-    // metod koji sluzi kao template za poruku
+    // template za poruku
     templateLi(data){
         let id = data.id;
         data = data.data();

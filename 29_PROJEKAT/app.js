@@ -16,7 +16,9 @@ let color_input = document.querySelector(`#color_pick`);
 let date_form = document.querySelector(`#form_date`)
 let date1 = document.querySelector(`#date1`);
 let date2 = document.querySelector(`#date2`);
-// pamcenje username-a i room-a
+
+// pamcenje username-a
+
 let username = () => {
     if (localStorage.username) {
         return localStorage.username
@@ -26,6 +28,7 @@ let username = () => {
     }
 }
 
+// pamcenje room-a
 
 let room_refresh = () =>{
     if(localStorage.room){
@@ -36,30 +39,22 @@ let room_refresh = () =>{
     }
 }
 
+// pamcenje boje
+
 let color_set = () => {
     if(localStorage.color){
         return localStorage.color
     }
     else{
-        return `#0D0D0D`
+        return `#C4D4F2`
     }
 };
-
 div_history.style.backgroundColor = color_set();
+
 // Objekti klasa/ instance klasa
+
 let chatroom = new Chatroom(room_refresh(), username());
 let chatUI = new ChatUI(message_container);
-
-// DEMONSTRACIJA postavljanja vrednosti u LOCAL STORAGE 
-// U local storage se sve cuva kao string :D
-
-// localStorage.setItem("username","Default");
-
-// UZIMANJE VREDNOSTI IZ LOCAL STORAGE-A
-// let korisnik = localStorage.username;
-// console.log(korisnik);
-
-/////////////////////////////////////////////////////////
 
 
 //ispis dokumenata iz db na stranici
@@ -69,6 +64,7 @@ chatroom.getChats((par)=>{ // ocekivanje parametra jer callback
 });
 
 // event listener za keypress u textarea.
+
 msg_textarea.addEventListener(`keyup`, event =>{
     if(event.which === 13){
         event.preventDefault();
@@ -84,11 +80,9 @@ msg_textarea.addEventListener(`keyup`, event =>{
             console.log(`desio se error: ${err}`);
         })
     }
-
-   
-    
 });
-/////////////////////////////////////////
+
+// event listener za send button
 
 send.addEventListener(`click`, e => {
     e.preventDefault();
@@ -106,7 +100,7 @@ send.addEventListener(`click`, e => {
     })
 });
 
-// update username forma OVO NE VRACA PROMIS I NEMA THEN I CATCH!!!
+// update username forma 
 
 update.addEventListener(`click`, e =>{
     e.preventDefault();
@@ -118,11 +112,11 @@ update.addEventListener(`click`, e =>{
     updated.style.color = `white`;
     updated.style.textAlign =`center`;
     updated.style.position = `fixed`;
-    updated.style.top = `50%`;
-    updated.style.left = `40%`;
+    updated.style.top = `0%`;
+    updated.style.left = `0%`;
     updated.style.zIndex = `100`;
     
-    updated.innerText = `Username updated to: ${user}`;
+    updated.innerText = `Username : ${user}`;
     
     setTimeout(function() {
         updated.innerText = ``;
@@ -130,6 +124,8 @@ update.addEventListener(`click`, e =>{
     }, 3000);
     
 });
+
+// navigacija kroz sobe
 
 chatroom_nav.addEventListener(`click`, event =>{
     if(event.target.tagName == `BUTTON`){
@@ -140,6 +136,8 @@ chatroom_nav.addEventListener(`click`, event =>{
         })
     }
 });
+
+// brisanje poruka
 
 message_container.addEventListener(`click`, event =>{
     if (event.target.tagName == `IMG`) {
@@ -158,6 +156,7 @@ message_container.addEventListener(`click`, event =>{
     }
 });
 
+// promena boje chat history-a
 
 form_color.addEventListener(`submit`, event =>{
     event.preventDefault();
@@ -168,9 +167,7 @@ form_color.addEventListener(`submit`, event =>{
     localStorage.setItem(`color`, color);
 });
 
-
-
-// date
+// date filter
 
 date_form.addEventListener(`submit`, event =>{
     event.preventDefault();
@@ -185,7 +182,5 @@ date_form.addEventListener(`submit`, event =>{
                 chatUI.templateLi(data);
             }
         });
-        // date_form.reset();
     }
-    
 });
