@@ -57,39 +57,67 @@ let obj2 = {
 }
 
 db.collection(`tasks`)
-    .doc(`play football`)
-    .set(obj2)
-    .then(() => {
-        console.log(`uspesno dodat task`);
-    })
-    .catch(error => {
-        console.log(`Neuspesno dodat task: ${error}`);
-    });
+.doc(`play football`)
+.set(obj2)
+.then(() => {
+    console.log(`uspesno dodat task`);
+})
+.catch(error => {
+    console.log(`Neuspesno dodat task: ${error}`);
+});
 
 
 // UPDATE
 db.collection(`tasks`)
-    .doc(`play football`)
-    .update({
-        priority: true
-    }
+.doc(`play football`)
+.update({
+    priority: true
+}
 
-    )
-    .then(() => {
-        console.log(`uspesno promenjeno polje u dokumentu`);
-    })
-    .catch(error => {
-        console.log(`Greska prilikom menjanja dokumenta: ${error}`);
-    });
+)
+.then(() => {
+    console.log(`uspesno promenjeno polje u dokumentu`);
+})
+.catch(error => {
+    console.log(`Greska prilikom menjanja dokumenta: ${error}`);
+});
 
 // DELETE
 
 db.collection(`customers`)
-    .doc(`03`)
-    .delete()
-    .then(() => {
-        console.log(`uspesno izbrisan dokument`);
-    })
-    .catch(error => {
-        console.log(`Greska: ${error}`);
-    });
+.doc(`03`)
+.delete()
+.then(() => {
+    console.log(`uspesno izbrisan dokument`);
+})
+.catch(error => {
+    console.log(`Greska: ${error}`);
+});
+
+
+// Drugi nacin za dodavanje dokumenta
+
+// kod add metode nema mogucnosti da se doda ID dokumenta
+
+db.collection(`tasks`)
+.add({
+    title: "Vezba za projekat",
+    description: "Vezbanje JS",
+    start_date: firebase.firestore.Timestamp.fromDate(new Date("2022-01-29")),
+    due_date: null,
+    priority: true
+})
+.then(() =>{
+    console.log(`uspesno dodat zadatak u kolekciju tasks`);
+})
+.catch(err =>{
+    console.log(`neuspesno dodat zadatak ${err}`);
+});
+
+/* 
+db.collection(`...`).add() je isto sto i db.collection(`.....`).doc().set()
+
+dodaje novi dokument sa random generisanim ID-em
+
+*/
+
